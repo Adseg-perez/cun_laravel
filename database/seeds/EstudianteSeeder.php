@@ -13,13 +13,8 @@ class EstudianteSeeder extends Seeder
      */
     public function run()
     {
-        /* $estudiante = factory(App\Models\Estudiante::class, 5)
-        	->create()
-        	/*->each(function($student){
-        		$student->examenes()->save(factory(App\Models\Examen::class)->make());
-            });
-        */
-        //guardar las materias que perteneceran al estudiante
+        //guardar las notas que perteneceran al estudiante
+        factory(App\Models\Estudiante::class, 5)->create();
         factory(App\Models\Nota::class, 5)->create();
     }
 }

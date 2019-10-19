@@ -20,7 +20,7 @@ class EstudianteController extends Controller
 
     //método que permite insertar datos con el sync
     public function storeSync(Request $request){
-        $estudiante = Estudiante::find(3);
+        $estudiante = Estudiante::find(1);
         $nota = Nota::all()->pluck('id')->toArray();
         $estudiante->notas()->sync($nota);
         return $estudiante->notas;
