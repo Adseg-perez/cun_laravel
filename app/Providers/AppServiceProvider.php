@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->validator->extendImplicit('alfabeticos_te', function ($attribute, $value, $parameters) {
+           return preg_match("/^[a-zA-Z_ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜàáâãäåèéêëìíîïðñòóôõöùúûüýøþÿÐdŒ\s]+$/",$value);
+        }, 'este campo solo puede contener caracteres alfabeticos, tildes o espacios');
+    
     }
 }

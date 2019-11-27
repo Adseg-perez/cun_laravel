@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
 //    return view('welcome');
-return csrf_token();
+//return csrf_token();//yp7FPALn3AZIplgSBq3qwQRxgYocTd1c7vk4FAye
 
 });
 

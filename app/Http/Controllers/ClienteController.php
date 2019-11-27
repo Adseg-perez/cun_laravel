@@ -4,19 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use App\Models\Pedido;
+
 use Illuminate\Http\Request;
+use App\Http\Requests\ClienteRequest;
 
 class ClienteController extends Controller
 {
     public function index()
     {
-    	/*return csrf_token();
-    	7FS7w5khuMqP85vNqQWQ1rxI2150FwhPozOe0dKI*/
-        $cliente = Cliente::find(1);
-        return $cliente;
+        
+    	return csrf_token();
+    	/*7FS7w5khuMqP85vNqQWQ1rxI2150FwhPozOe0dKI*/
+        // $cliente = Cliente::find(1);
+        // return $cliente;
     }
     //método que permite guardar con saveMany
-    public function store(Request $request){
+    public function store(ClienteRequest $request){
+
+        $data=$request->all();
+        return $data;
+
+        /*
         $cliente = Cliente::find(1);
         $fecha = new \Carbon\Carbon();
         $cliente->pedidos()->saveMany([
@@ -29,7 +37,7 @@ class ClienteController extends Controller
                 'cliente_id' => Cliente::inRandomOrder()->value('id'),
             ])
         ]);
-        return $cliente->pedidos;
+        return $cliente->pedidos;*/
     }
     //método que permite guardar con create many
     public function guardar(Request $request)
